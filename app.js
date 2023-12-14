@@ -28,11 +28,11 @@ app.set('cookieParser', 'dev');
 
 //Ruta base para probar todo
 app.get('/holamundo', (req, res) => {
-  res.send('Hola Mundo');
+  res.render('Hola Mundo');
 });
 
-app.get('/home', (req, res) => {
-  res.render(path.resolve(__dirname,'./src/views/home.ejs'));
+app.get('/homee', (req, res) => {
+  res.render(__dirname + '/home');
 });
 
 

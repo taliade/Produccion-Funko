@@ -6,6 +6,22 @@ const {body}= require ('express-validator')
 
 
 const controllers = require('../controllers/adminControllers');
+const adminControllers = require('../controllers/adminControllers');
+
+
+
+const config ={
+    destino:(req,file,cb) =>cb(null, path.resolve(__dirname,'../../public/img')),
+    filename: (req,file,cb) =>{
+        console.log(file)
+        cb(null,file.priginalme + '-'+ Date.now()+'-'+ Date.now)
+    }
+}
+
+const storage = multer.diskStorage(config)
+const uphoadFile =multer({storage})
+router.get('/create', adminControllers.create)
+router.get('/save', uphoadFile.single('image'), adminControllers.save)
 
 const login =[
     body('email')

@@ -1,7 +1,7 @@
 const ItemsService = require('../services/itemServices');
 const CategoryService = require('../services/categoryService');
 const LicenceService = require('../services/licenceService');
-
+const adminView = require ('../routes/adminRoutes')
 
 
 
